@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"math/rand"
 	"os"
@@ -38,10 +37,7 @@ func readWords() (*[]string, error) {
 	lines := strings.Split(*line, "\n")
 	length := len(lines)
 
-	println(length)
-
 	var words []string
-
 	for i := 0; i < 10; i += 1 {
 		words = append(words, lines[rand.Intn(length)])
 	}
