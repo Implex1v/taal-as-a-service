@@ -50,8 +50,8 @@ jobs:
       - name: Render values.yaml
         uses: cuchi/jinja2-action@v1.2.0
         with:
-          template: ${{ inputs.component }}/chart/values.j2
-          output_file: ${{ inputs.component }}/chart/values.override.yaml
+          template: ./chart/values.j2
+          output_file: ./chart/values.override.yaml
           strict: true
           variables: |
             base_domain=${{ secrets.domain }}
