@@ -57,7 +57,7 @@ jobs:
             base_domain=${{ secrets.domain }}
             image=${{ secrets.cr }}/taas-${{ inputs.component }}
       - name: Kubernetes deploy
-        working-directory: ${{ inputs.component }}/chart
+        working-directory: chart
         id: helm_deploy
         run: |
           set -ex
