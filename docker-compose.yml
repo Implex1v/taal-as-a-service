@@ -7,7 +7,7 @@ x-buildargs: &build_args
 services:
 
   api:
-    image: ${CR_BASE:-ghcr.io/implex1v}/taal-as-a-service-api:${BUILD_VERSION:-latest}
+    image: ${CR_BASE:-ghcr.io/implex1v}/taas-api:${BUILD_VERSION:-latest}
     restart: unless-stopped
     ports:
       - 8080:8080
