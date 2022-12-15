@@ -53,5 +53,5 @@ jobs:
           docker-compose push ${COMPONENT}
       - name: Retag to latest and push image
         run: |
-          docker tag ${CR_BASE}/taal-as-a-service-${COMPONENT}:${BUILD_VERSION} ${CR_BASE}/taal-as-a-service-${COMPONENT}:latest
-          docker push ${CR_BASE}/taal-as-a-service-${COMPONENT}:latest
+          docker tag ${CR_BASE}/taas-${COMPONENT}:${BUILD_VERSION} ${CR_BASE}/taas-${COMPONENT}:latest
+          docker push ${CR_BASE}/taas-${COMPONENT}:latest

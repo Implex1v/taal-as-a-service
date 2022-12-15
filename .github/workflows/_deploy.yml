@@ -55,7 +55,7 @@ jobs:
           strict: true
           variables: |
             base_domain=${{ secrets.domain }}
-            image=${{ secrets.cr }}/taal-as-a-service-${{ inputs.component }}
+            image=${{ secrets.cr }}/taas-${{ inputs.component }}
       - name: Kubernetes deploy
         working-directory: ${{ inputs.component }}/chart
         id: helm_deploy
