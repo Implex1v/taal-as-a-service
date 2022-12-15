@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"math/rand"
+	"net/http"
 	"os"
 	"strings"
 )
@@ -12,6 +13,7 @@ func main() {
 	e := echo.New()
 	e.Use(middleware.Recover())
 	e.GET("/words", getWords)
+	e.GET("/health", getHealth)
 
 	err := e.Start(":8080")
 	if err != nil {
@@ -27,6 +29,10 @@ func getWords(c echo.Context) error {
 	}
 
 	return c.JSON(200, words)
+}
+
+func getHealth(c echo.Context) error {
+	return c.String(http.StatusOK, "")
 }
 
 func readWords() (*[]string, error) {
