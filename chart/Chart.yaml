@@ -1,5 +1,5 @@
 apiVersion: v2
-name: taas-api
+name: api
 description: Helm chart for the API of TaaS
 type: application
 version: 0.1.0

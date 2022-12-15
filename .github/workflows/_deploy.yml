@@ -73,5 +73,5 @@ jobs:
             -f values.yaml \
             -f values.override.yaml \
             ${COMPONENT} \
-            ${COMPONENT}-${VERSION}.tgz
+            ./${COMPONENT}-${VERSION}.tgz
           helm test api -n ${NAMESPACE} --logs --timeout 6m0s
