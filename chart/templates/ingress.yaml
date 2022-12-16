@@ -16,6 +16,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/server-snippet: |
+      location ~* "^/metrics" {
+          deny all;
+          return 404;
+      }
     {{- with .Values.ingress.annotations }}
       {{- toYaml . | nindent 4 }}
     {{- end }}
