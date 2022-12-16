@@ -20,6 +20,10 @@ func GetWords(c echo.Context) error {
 	return c.JSON(200, words)
 }
 
+func GetHealth(c echo.Context) error {
+	return c.String(http.StatusOK, "")
+}
+
 func parseQueryAsInt(c echo.Context, name string, defaultValue int) int {
 	var str = c.QueryParam(name)
 	if str == "" {
@@ -32,10 +36,6 @@ func parseQueryAsInt(c echo.Context, name string, defaultValue int) int {
 	}
 
 	return num
-}
-
-func GetHealth(c echo.Context) error {
-	return c.String(http.StatusOK, "")
 }
 
 func readWords(count int) (*[]string, error) {
